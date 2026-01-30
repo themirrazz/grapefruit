@@ -1,0 +1,26 @@
+{
+  "name": "grapefruit",
+  "productName": "AJ Classic",
+  "version": "1.0.0",
+  "description": "Runtime for AJ Classic",
+  "keywords": [
+    "animal-jam-classic",
+    "ajclassic",
+    "electron"
+  ],
+  "homepage": "https://github.com/themirrazz/grapefruit#readme",
+  "bugs": {
+    "url": "https://github.com/themirrazz/grapefruit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themirrazz/grapefruit.git"
+  },
+  "license": "UNLICENSED",
+  "author": "themirrazz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron11 ."
+  }
+}

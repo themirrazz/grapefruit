@@ -1,0 +1,89 @@
+// Required modules
+const fs = require('original-fs');
+const path = require('path');
+const os = require('os');
+const { session, app, dialog } = require('electron'); 
+const pkginfo = require('./package.json');
+
+// Loader for optional modules
+const tryquire = (m) => {
+    try {
+        return require(m);
+    } catch (error) {
+        return null;
+    }
+};
+
+// Cross-platform plugin names
+const plugin = {
+    win: 'pepflashplayer.dll',
+    win32: 'pepflashplayer.dll',
+    linux: 'libpepflashplayer.so'
+};
+
+// Get libdirs
+const lbd = tryquire('./libdir.js') || {
+    // Files
+    gameAsar: path.join(__dirname, 'game.asar'),
+    gameLock: path.join(__dirname, 'game-version.lock'),
+    pepperFlash: path.join(__dirname, plugin[os.platform()]),
+    // Optional modules
+    libinstall: './libinstall.js',
+    everyUpdater: './everyUpdater.js',
+    electronUpdater: './game.asar/node_modules/electron-updater',
+    gameConfig: './game.asar/config.js',
+    gameEntry: './game.asar/index.js',
+};
+
+// Check game files
+const gameExists = fs.existsSync(lbd.gameAsar);
+const vLockExists = fs.existsSync(lbd.gameLock);
+
+if(os.platform() === 'linux')
+    app.commandLine.appendSwitch('no-sandbox');
+
+app.commandLine.appendSwitch('ppapi-flash-path', lbd.pepperFlash);
+
+// Main logic
+(async () => {
+    await app.whenReady();
+    // Check to see if the game files exist
+    if(!(gameExists&&vLockExists)) {
+        // Try to install the game files
+        if(!tryquire(lbd.libinstall)) {
+            // There isn't an installer
+            // Tell the user that the game files are missing
+            dialog.showErrorBox("Grapefruit", "The game package could not be found. Your installation\n may be corrupted. Try reinstalling AJClassic/Grapefruit\nto fix this error.");
+            app.quit();
+        }
+        return;
+    }
+    // Optionally, we can provide our own updater
+    const EveryUpdater = tryquire(lbd.everyUpdater);
+    const elec_upd = tryquire(lbd.electronUpdater);
+    if(EveryUpdater && elec_upd) {
+        Object.defineProperty(elec_upd, 'autoUpdater', {
+            value: new EveryUpdater(),
+            writable: true
+        });
+    } else {
+        // Prevent AJ Classic from trying to check for updates
+        // Otherwise you won't get past the login screen
+        Object.defineProperty(tryquire(lbd.gameConfig)||{}, 'noUpdater', {
+            value: true,
+            writable: true
+        });
+    }
+    // We need to make sure we have the correct user agent
+    // Also add that we are using Grapefruit runtime
+    session.defaultSession.setUserAgent(
+        session.defaultSession.getUserAgent().replaceAll(
+            'AJClassic/' + pkginfo.version,
+            'AJClassic/' + fs.readFileSync(lbd.gameLock, {
+                encoding: 'utf8'
+            })
+        ).trim() + ' Grapefruit/' + pkginfo.version
+    );
+    console.log(session.defaultSession.getUserAgent());
+    tryquire(lbd.gameEntry);
+})();
