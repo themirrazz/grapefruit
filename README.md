@@ -24,4 +24,4 @@ Grapefruit itself requires the `electron`, `os`, `path`, and `original-fs` modul
 
 AJ Classic itself may require additional modules, and might not work out of the box. AJ Classic specifically uses Electron v11.5.0, and this is the only currently known version of Electron it works with.
 
-I will be making docs for porting Grapefruit eventually.
+I will be making docs for porting Grapefruit to other platforms eventually.
