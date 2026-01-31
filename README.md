@@ -30,3 +30,16 @@ Grapefruit itself requires the `electron`, `os`, `path`, and `original-fs` modul
 AJ Classic itself may require additional modules, and might not work out of the box. AJ Classic specifically uses Electron v11.5.0, and this is the only currently known version of Electron it works with.
 
 I will be making docs for porting Grapefruit to other platforms eventually.
+
+## FAQ
+### Is Grapefruit replacing AJCEverywhere?
+Yes, AJCEverywhere will no longer be maintained.
+
+### Does Grapefruit modify the actual game?
+No. Just like AJCEverywhere, Grapefruit is able to run AJ Classic from an unmodified asar file.
+
+### Does Grapefruit support automatic updates?
+Grapefruit doesn't have automatic updates built in - neither for itself nor the game. However, Grapefruit *does* have the ability to load external modules, both for updating the game as well as installing it if the initial game files are missing.
+
+### Does Grapefruit come with the game files/Flash?
+For copyright reasons, Grapefruit does *not* include the AJ Classic game files or Flash in its source code or packages. However, some of the installers *do* install the game files/Flash from official sources, but they do not include said files themselves.
