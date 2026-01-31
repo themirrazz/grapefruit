@@ -11,7 +11,26 @@ There are `.tar.gz` builds available for Windows 32-bit and 64-bit, but those on
 TBD
 
 ### Arch Linux
-TBD
+First, you'll need 7-Zip and an AUR manager installed. You can install 7-Zip using this command:
+```bash
+sudo pacman -S 7zip
+```
+
+If you're new to Arch, you can install the AUR manager `yay` with this command:
+```bash
+sudo pacman -S yay
+```
+You can also use `paru` instead, the syntax is pretty much the same as `yay` (I think).
+
+Using your AUR manager of choice, install the `electron11-bin`, `pepper-flash`, and `ajclassic-grapefruit` packages:
+```bash
+yay -S electron11-bin pepper-flash ajclassic-grapefruit
+```
+To start it, just run `aj-classic` in a terminal!
+
+The `ajclassic-grapefruit` library uses your system's copy of Electron/Pepper Flash, so if you don't have Electron 11 and Pepper Flash already installed, then it won't launch.
+
+If you're using KDE, you might see an "AJ Classic" desktop entry if you search for "AJ Classic." This is the old desktop entry from AJCEverywhere (hence why it says "Via AJCEverywhere" below it), and it doesn't work, and, for whatever mysterious reason, never has. Instead, you should launch it from the terminal. This shortcut *might* work in GNOME or other desktop environments, but I have *NOT* tested it!
 
 ### Raspbian (32-bit)
 TBD
@@ -43,3 +62,6 @@ Grapefruit doesn't have automatic updates built in - neither for itself nor the 
 
 ### Does Grapefruit come with the game files/Flash?
 For copyright reasons, Grapefruit does *not* include the AJ Classic game files or Flash in its source code or packages. However, some of the installers *do* install the game files/Flash from official sources, but they do not include said files themselves.
+
+### Will Grapefruit hack me?
+Grapefruit will not hack you. However, you can get hacked if another malicious program tampers with the files, or if you download Grapefruit from an untrusted source. Make sure you don't download Grapefruit (or any program, for that matter) from random websites you don't trust, and *definently* don't run them as root/admin!
