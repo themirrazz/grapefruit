@@ -36,7 +36,7 @@ I will be making docs for porting Grapefruit to other platforms eventually.
 Yes, AJCEverywhere will no longer be maintained.
 
 ### Does Grapefruit modify the actual game?
-No. Just like AJCEverywhere, Grapefruit is able to run AJ Classic from an unmodified asar file.
+No. Just like AJCEverywhere, Grapefruit is able to run AJ Classic from an unmodified asar file. It does make minor in-memory tweaks to make sure that automatic updates work correctly (or are disabled if there is no update service provided), but the core logic of the game is not touched and the original `app.asar`/`game.asar` does not get overwritten.
 
 ### Does Grapefruit support automatic updates?
 Grapefruit doesn't have automatic updates built in - neither for itself nor the game. However, Grapefruit *does* have the ability to load external modules, both for updating the game as well as installing it if the initial game files are missing.
