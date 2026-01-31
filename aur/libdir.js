@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
     // Files
     gameAsar: path.join(__dirname, 'game.asar'),
