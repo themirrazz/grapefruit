@@ -33,7 +33,7 @@ The `ajclassic-grapefruit` library uses your system's copy of Electron/Pepper Fl
 If you're using KDE, you might see an "AJ Classic" desktop entry if you search for "AJ Classic." This is the old desktop entry from AJCEverywhere (hence why it says "Via AJCEverywhere" below it), and it doesn't work, and, for whatever mysterious reason, never has. Instead, you should launch it from the terminal. This shortcut *might* work in GNOME or other desktop environments, but I have *NOT* tested it!
 
 ### Raspbian (32-bit)
-TBD
+I'm working on a shell script for this right now, it should be finished early next week.
 
 ### Raspbian (64-bit)
 TBD
