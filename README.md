@@ -5,17 +5,22 @@ Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic. Unli
 ### Windows or Mac
 Currently, Grapefruit isn't available for Windows or Mac. I didn't think it'd make sense since it's just an Electron-based wrapper around the official client. If you're on Windows or Mac, you can go to AJ Classic's [official website](https://classic.animaljam.com/?utm_source=grapefruit-gh) and download it that way.
 
+There are `.tar.gz` builds available for Windows 32-bit and 64-bit, but those only include the Grapefruit runtime itself, not the AJ Classic game files or Pepper Flash.
+
 ### Ubuntu
 TBD
 
 ### Arch Linux
-I'm making yet *another* package for the AUR. Unlike this one, it'll also automatically download the game files as well as Flash Player.
+TBD
 
 ### Raspbian (32-bit)
 TBD
 
 ### Raspbian (64-bit)
 TBD
+
+## Building from source
+To install the dependencies, run `npm install`. You can then use `make` to build versions for Linux or Windows. If you're on a Linux-based system, you can add `-tgz` to package a build in `.tar.gz` format. You can also use `npm test` to run Grapefruit. If you're on Arch Linux and have the `electron11-bin` package from the AUR and don't intend on building your own packages, you can run `electron11 . --no-sandbox` to run Grapefruit without needing to install its dependencies.
 
 ## Porting Grapefruit
 Grapefruit is designed to be cross-platform. All it requires is an Electron-compatible environment that supports Flash Player. If you're trying to port it to another platform, then don't worry - Grapefruit is designed to be super easy to port as well!
