@@ -14,6 +14,8 @@ curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.0/ubuntu
 ```
 You should see Grapefruit appear in your Activities!
 
+We are also working on a version of Grapefruit that can be installed via the [Snap Store](https://snapcraft.io/store).
+
 ### Arch Linux
 First, you'll need 7-Zip and an AUR manager installed. You can install 7-Zip using this command:
 ```bash
@@ -32,11 +34,23 @@ In addition, you can download the PKGBUILD from the AUR and install it manually,
 
 You should see a desktop entry appear in your application launcher of choice.
 
+We are currently working on a more painful way to install Grapefruit on Arch, please stay tuned.
+
+btw i use arch
+
 ### Fedora
 TBD
 
 ### Gentoo
-TBD
+First off, you'll need to compile Electron v11.5.0. You can find the source code and ffmpeg binaries [here](https://github.com/electron/electron/releases/tag/v11.5.0). You'll also need to make sure you've compiled your terminal and your shell of choice. Once you've compiled them, you'll need to download Pepper Flash. You can download an official binary and disable the time bomb by running these commands:
+```
+curl -L -o /tmp/pepperflash.tar.gz "https://web.archive.org/web/20210116212416if_/https://fpdownload.adobe.com/get/flashplayer/pdc/32.0.0.465/flash_player_ppapi_linux.x86_64.tar.gz"
+tar -xvzf /tmp/pepperflash.tar.gz -C /tmp/pepperflash
+sed -i 's/\x00\x00\x40\x46\x3E\x6F\x77\x42/\x00\x00\x00\x00\x00\x00\xF8\x7F/' /tmp/pepperflash/libpepflashplayer.so
+```
+Once you do that, you'll need to compile a disassembler so you can convert Pepper Flash into assembly. Then, you'll need to recompiled Pepper Flash for your platform. Once you've done that, download a copy of the AJ Classic game files. You can download an official copy from [this link](https://classic-download.animaljam.com/win/aj-classic-1.5.7-ia32.nsis.7z) and extract them using p7zip. (You'll have to compile it if you don't already have it installed.) The file you're looking for is `app.asar`.
+
+Next, compile a copy of Node.JS so you can run `electron-packager`. Download the source code of this project, and put `libpepflashplayer.so` and `app.asar` in the same directory as the source code. Rename `app.asar` to `game.asar`, package it using `electron-packager`, and you should be good to go!
 
 ### Crostini (x64)
 Crostini is the built-in Linux VM on Chromebooks. You can easily install Grapefruit inside of Crostini by using the Ubuntu installer:
