@@ -8,7 +8,10 @@ Currently, Grapefruit isn't available for Windows or Mac. I didn't think it'd ma
 There are `.tar.gz` builds available for Windows 32-bit and 64-bit, but those only include the Grapefruit runtime itself, not the AJ Classic game files or Pepper Flash.
 
 ### Ubuntu
-TBD
+Run the official Ubuntu install script:
+```bash
+curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.0/ubuntu-x64.sh | sh   
+```
 
 ### Arch Linux
 First, you'll need 7-Zip and an AUR manager installed. You can install 7-Zip using this command:
@@ -33,7 +36,7 @@ The `ajclassic-grapefruit` library uses your system's copy of Electron/Pepper Fl
 If you're using KDE, you might see an "AJ Classic" desktop entry if you search for "AJ Classic." This is the old desktop entry from AJCEverywhere (hence why it says "Via AJCEverywhere" below it), and it doesn't work, and, for whatever mysterious reason, never has. Instead, you should launch it from the terminal. This shortcut *might* work in GNOME or other desktop environments, but I have *NOT* tested it!
 
 ### Raspbian (32-bit)
-I'm working on a shell script for this right now, it should be finished early next week.
+TBD
 
 ### Raspbian (64-bit)
 TBD
