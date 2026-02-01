@@ -41,19 +41,23 @@ TBD
 ### Gentoo
 TBD
 
+### Crostini (x64)
+Crostini is the built-in Linux VM on Chromebooks. You can easily install Grapefruit inside of Crostini by using the Ubuntu installer:
+```bash
+curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.0/ubuntu-x64.sh | sh   
+```
+At this moment, we only support Crostini on x64-based Chromebooks. If you have an ARM-based Chromebook, you'll need to install it directly on chromeOS.
+
 ### Raspbian (32-bit)
 TBD
 
 ### Raspbian (64-bit)
 TBD
 
-### Crostini
-Crostini is the built-in Linux VM on Chromebooks. You can easily install Grapefruit inside of Crostini by using the Ubuntu installer:
-```bash
-curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.0/ubuntu-x64.sh | sh   
-```
-
 ### chromeOS
+TBD
+
+### FreeBSD
 TBD
 
 ## Building from source
