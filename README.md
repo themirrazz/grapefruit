@@ -1,5 +1,5 @@
 # Grapefruit
-Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic, similar to [AJCEverywhere](https://github.com/themirrazz/ajc-everywhere). But unlike AJCEverywhere, it's super lightweight. All of the core logic is implemented in a single file, which is only 91 lines long (including blank lines and comments). However, it does support three additional modules - EveryUpdater, LibInstall, and Libdir - for extended functionality.
+Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic, similar to [AJCEverywhere](https://github.com/themirrazz/ajc-everywhere). But unlike AJCEverywhere, it's super lightweight. All of the core logic is implemented in a single file, which is only ~~91~~89 lines long (including blank lines and comments). However, it does support three additional modules - EveryUpdater, LibInstall, and Libdir - for extended functionality.
 
 ## Installing Grapefruit
 ### Windows or Mac
