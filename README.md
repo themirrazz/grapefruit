@@ -12,6 +12,7 @@ Run the official Ubuntu install script:
 ```bash
 curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.0/ubuntu-x64.sh | sh   
 ```
+You should see Grapefruit appear in your Activities!
 
 ### Arch Linux
 First, you'll need 7-Zip and an AUR manager installed. You can install 7-Zip using this command:
@@ -27,9 +28,9 @@ To start it, just run `aj-classic` in a terminal!
 
 The `ajclassic-grapefruit` library uses your system's copy of Electron/Pepper Flash, so if you don't have Electron 11 and Pepper Flash already installed, then it won't launch.
 
-If you're using KDE, you might see an "AJ Classic" desktop entry if you search for "AJ Classic." This is the old desktop entry from AJCEverywhere (hence why it says "Via AJCEverywhere" below it), and it doesn't work, and, for whatever mysterious reason, never has. Instead, you should launch it from the terminal. This shortcut *might* work in GNOME or other desktop environments, but I have *NOT* tested it!
+In addition, you can download the PKGBUILD from the AUR and install it manually, either by using `makepkg` or by following all of the instructions inside of the PKGBUILD and placing all of the files by hand.
 
-In addition, you can download the PKGBUILD from the AUR and install it manually, either by using `makepkg` or by following all of the instructions inside of the PKGBUILD and placing all of the files by hand. 
+You should see a desktop entry appear in your application launcher of choice.
 
 ### Fedora
 TBD
