@@ -51,15 +51,6 @@ TBD
 ### Raspbian (64-bit)
 TBD
 
-### chromeOS
-TBD
-
-### FreeBSD
-TBD
-
-### Nintendo 3DS
-TBD
-
 ## Building from source
 To install the dependencies, run `npm install`. You can then use `make` to build versions for Linux or Windows. If you're on a Linux-based system, you can add `-tgz` to package a build in `.tar.gz` format. You can also use `npm test` to run Grapefruit. If you're on Arch Linux and have the `electron11-bin` package from the AUR and don't intend on building your own packages, you can run `electron11 . --no-sandbox` to run Grapefruit without needing to install its dependencies.
 
