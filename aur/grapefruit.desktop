@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=AJ Classic (Grapefruit)
+Terminal=false
+Type=Application
+StartupNotify=true
+Comment=AJ Classic for Desktop
+Exec=/usr/bin/aj-classic
+Categories=Game
+Icon=/usr/lib/ajclassic-grapefruit/gameicon.png
