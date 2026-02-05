@@ -43,11 +43,7 @@ TBD
 Compile Electron v11.5.0. You can find the source code and ffmpeg binaries [here](https://github.com/electron/electron/releases/tag/v11.5.0). (You can also install it via `emerge`, if a package exists.) Then download Pepper Flash, the AJ Classic files, and the Grapefruit source. (You can look at the other install scripts to see where to find these.
 
 ### Crostini (x64)
-Crostini is the built-in Linux VM on Chromebooks. You can easily install Grapefruit inside of Crostini by using the Ubuntu installer:
-```bash
-curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.0/ubuntu-x64.sh | sh   
-```
-At this moment, we only support Crostini on x64-based Chromebooks. If you have an ARM-based Chromebook, you'll need to install it directly on chromeOS.
+The previous instructions (using the Ubuntu installer) would install Grapefruit and Pepper Flash but not the game files. We are working on a new version that actually supports chromeOS.
 
 ### Raspbian (32-bit)
 TBD
