@@ -18,31 +18,26 @@ const tryquire = (m) => {
 const plugin = {
     win: 'pepflashplayer.dll',
     win32: 'pepflashplayer.dll',
-    linux: 'libpepflashplayer.so'
+    linux: 'libpepflashplayer.so',
+    darwin: 'PepperFlashPlayer.plugin'
 };
 
 // Get libdirs
-const lbd = tryquire('./libdir.js') || {
-    // Files
-    gameAsar: path.join(__dirname, 'game.asar'),
-    gameLock: path.join(__dirname, 'game-version.lock'),
-    pepperFlash: path.join(__dirname, plugin[os.platform()]),
-    // Optional modules
-    libinstall: './libinstall.js',
-    everyUpdater: './everyUpdater.js',
-    electronUpdater: './game.asar/node_modules/electron-updater',
-    gameConfig: './game.asar/config.js',
-    gameEntry: './game.asar/index.js',
+const lbd = {
+    gameAsar: tryquire('libdir').gameAsar || path.join(__dirname, 'game.asar'),
+    gameConfig: lbd.gameAsar + '/config.js',
+    gameEntry: lbd.gameAsar + '/index.js',
+    electronUpdater: lbd.gameAsar + './game.asar/node_modules/electron-updater'
 };
 
 // Check game files
 const gameExists = fs.existsSync(lbd.gameAsar);
 const vLockExists = fs.existsSync(lbd.gameLock);
 
-if(os.platform() === 'linux')
+if(tryquire('rmsandbox'))
     app.commandLine.appendSwitch('no-sandbox');
 
-app.commandLine.appendSwitch('ppapi-flash-path', lbd.pepperFlash);
+app.commandLine.appendSwitch('ppapi-flash-path', tryquire('libdir').pepperFlash || path.join(__dirname, plugin[os.platform()]));
 
 // Main logic
 (async () => {
@@ -50,7 +45,7 @@ app.commandLine.appendSwitch('ppapi-flash-path', lbd.pepperFlash);
     // Check to see if the game files exist
     if(!(gameExists&&vLockExists)) {
         // Try to install the game files
-        if(!tryquire(lbd.libinstall)) {
+        if(!tryquire('libinstall')) {
             // There isn't an installer
             // Tell the user that the game files are missing
             dialog.showErrorBox("Grapefruit", "The game package could not be found. Your installation\n may be corrupted. Try reinstalling AJClassic/Grapefruit\nto fix this error.");
@@ -59,7 +54,7 @@ app.commandLine.appendSwitch('ppapi-flash-path', lbd.pepperFlash);
         return;
     }
     // Optionally, we can provide our own updater
-    const EveryUpdater = tryquire(lbd.everyUpdater);
+    const EveryUpdater = tryquire('every-updater');
     const elec_upd = tryquire(lbd.electronUpdater);
     if(EveryUpdater && elec_upd) {
         Object.defineProperty(elec_upd, 'autoUpdater', {
@@ -76,13 +71,14 @@ app.commandLine.appendSwitch('ppapi-flash-path', lbd.pepperFlash);
     }
     // We need to make sure we have the correct user agent
     // Also add that we are using Grapefruit runtime
+    const userAgent = tryquire('userAgent');
     session.defaultSession.setUserAgent(
-        session.defaultSession.getUserAgent().replaceAll(
+        typeof userAgent === 'string' ? userAgent : (session.defaultSession.getUserAgent().replaceAll(
             'AJClassic/' + pkginfo.version,
             'AJClassic/' + fs.readFileSync(lbd.gameLock, {
                 encoding: 'utf8'
             })
-        ).trim() + ' Grapefruit/' + pkginfo.version
+        ).trim())
     );
     console.log(session.defaultSession.getUserAgent());
     tryquire(lbd.gameEntry);
