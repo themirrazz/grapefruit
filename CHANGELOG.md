@@ -6,3 +6,6 @@
 * Moved all possible addons to proper `node_modules`
   * (This was mostly for aesthetic code)
 * Added the ability to install globally on Ubuntu
+
+## Grapefruit v1.0.0
+* First ever release of Grapefruit!
