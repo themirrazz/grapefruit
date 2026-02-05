@@ -25,17 +25,18 @@ const plugin = {
 // Get libdirs
 const lbd = {
     gameAsar: (tryquire('libdir')||{}).gameAsar || path.join(__dirname, 'game.asar'),
+    gameLock: (tryquire('libdir')||{}).gameLock || path.join(__dirname, 'game-version.lock'),
 };
 
 lbd.gameConfig = lbd.gameAsar + '/config.js';
 lbd.gameEntry = lbd.gameAsar + '/index.js';
-lbd.electronUpdater = lbd.gameAsar + './game.asar/node_modules/electron-updater';
+lbd.electronUpdater = lbd.gameAsar + '/game.asar/node_modules/electron-updater';
 
 // Check game files
 const gameExists = fs.existsSync(lbd.gameAsar);
 const vLockExists = fs.existsSync(lbd.gameLock);
 
-if(tryquire('rmsandbox'))
+if(tryquire('rmsandbox') || true)
     app.commandLine.appendSwitch('no-sandbox');
 
 app.commandLine.appendSwitch('ppapi-flash-path', (tryquire('libdir')||{}).pepperFlash || path.join(__dirname, plugin[os.platform()]));
