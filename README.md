@@ -1,5 +1,5 @@
 # Grapefruit
-Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic. It's super lightweight - in fact, all of the core logic is implemented in a single file, which is only ~~91~~89 lines long (including blank lines and comments). Grapefruit was made with one goal in mind: Port AJ Classic to as many platforms as possible before they finish rewriting the entire thing in WebGL. 
+Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic. It's super lightweight - in fact, all of the core logic is implemented in a single file, which is only ~~91~~ ~~89~~ 85 lines long (including blank lines and comments). Grapefruit was made with one goal in mind: Port AJ Classic to as many platforms as possible before they finish rewriting the entire thing in WebGL. 
 
 ## Installing Grapefruit
 ### Windows or Mac
@@ -8,7 +8,7 @@ Currently, Grapefruit isn't available for Windows or Mac. I didn't think it'd ma
 There are `.tar.gz` builds available for Windows 32-bit and 64-bit, but those only include the Grapefruit runtime itself, not the AJ Classic game files or Pepper Flash.
 
 ### Ubuntu
-Run the official Ubuntu install script:
+Run the official Ubuntu install script to install it locally:
 ```bash
 curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.0/ubuntu-x64.sh | sh   
 ```
