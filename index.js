@@ -25,10 +25,11 @@ const plugin = {
 // Get libdirs
 const lbd = {
     gameAsar: (tryquire('libdir')||{}).gameAsar || path.join(__dirname, 'game.asar'),
-    gameConfig: lbd.gameAsar + '/config.js',
-    gameEntry: lbd.gameAsar + '/index.js',
-    electronUpdater: lbd.gameAsar + './game.asar/node_modules/electron-updater'
 };
+
+lbd.gameConfig = lbd.gameAsar + '/config.js';
+lbd.gameEntry = lbd.gameAsar + '/index.js';
+lbd.electronUpdater = lbd.gameAsar + './game.asar/node_modules/electron-updater';
 
 // Check game files
 const gameExists = fs.existsSync(lbd.gameAsar);
