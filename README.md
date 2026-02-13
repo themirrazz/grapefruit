@@ -47,7 +47,7 @@ Yes, Grapefruit has been tested on Arch Linux and Crostini.
 AJ Classic has official Windows/Mac clients, so we didn't think it was worth it to make a wrapper.
 
 ### Wait, is it true this is coming to phones?
-Yes, we've actually been figuring out how to get it to run on both iOS and Android via Termux and UTM SE, respectively. It also works on mobile Linux distros - like Ubuntu Touch.
+Yes, we've actually been figuring out how to get it to run on both iOS and Android via Termux and UTM SE, respectively. It also works on Linux phones and tablets - like Ubuntu Touch and Plasma Mobile.
 
 ### And TVs? That one's a joke, right?
 Nope! Both Samsung and LG TVs run Linux *and* have glibc. And with Electron's `BrowserView`, we don't even need X11 anymore - we can just push each frame to Tizen's native rendering API.
