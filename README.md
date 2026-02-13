@@ -2,54 +2,27 @@
 Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic. It's super lightweight - in fact, all of the core logic is implemented in a single file, which is only ~~91~~ ~~89~~ 87 lines long (including blank lines and comments). Grapefruit was made with one goal in mind: Port AJ Classic to as many platforms as possible before they finish rewriting the entire thing in WebGL. 
 
 ## Installing Grapefruit
-### Windows or Mac
-Currently, Grapefruit isn't available for Windows or Mac. I didn't think it'd make sense since it's just an Electron-based wrapper around the official client. If you're on Windows or Mac, you can go to AJ Classic's [official website](https://classic.animaljam.com/?utm_source=grapefruit-gh) and download it that way.
+You can find the installation instructions for all platforms in the [`INSTALL.md`](INSTALL.md) file. If Grapefruit isn't available from your platform, you can follow these instructions to manually install it (not officially supported).
 
-There are `.tar.gz` builds available for Windows 32-bit and 64-bit, but those only include the Grapefruit runtime itself, not the AJ Classic game files or Pepper Flash.
+### 1. Download the Grapefruit package
+You can download the Grapefruit package for Windows or Linux from these links: [Windows (x86)](https://github.com/themirrazz/grapefruit/releases/download/v1.0.1/Grapefruit-win-ia32.tar.gz) &bullet; [Windows (x64)](https://github.com/themirrazz/grapefruit/releases/download/v1.0.1/Grapefruit-win-x64.tar.gz) &bullet; [Linux (x64)](https://github.com/themirrazz/grapefruit/releases/download/v1.0.1/Grapefruit-linux-x64.tar.gz) &bullet; [Linux (ARMv7l)](https://github.com/themirrazz/grapefruit/releases/download/v1.0.1/Grapefruit-linux-armv7l.tar.gz)
 
-### Ubuntu
-Run the official Ubuntu install script to install it locally:
-```bash
-curl -L https://github.com/themirrazz/grapefruit/releases/download/v1.0.1/ubuntu-x64.sh | sh   
+Once you've downloaded it, extract the package into a new folder.
+
+### 2. Download Pepper Flash
+Download Pepper Flash. On Arch Linux (x64), you can get it by installing the `pepper-flash` package from the AUR. You can manually follow the PKGBUILD instructions on other non-Arch-based distros. On ARM, you can find ARMv7l copies of Pepper Flash 28 that have been extracted from chromeOS. On Windows or Mac, you can get a copy of `pepflashplayer.dll` from the AJ Classic game files. Copy Pepper Flash to `resources/app/libpepflashplayer.so` or `resources/app/pepflashplayer.dll` inside of the Grapefruit package.
+
+### 3. Download the game files
+You can download AJ Classic 1.5.7 [here](https://classic-download.animaljam.com/win/aj-classic-1.5.7-ia32.nsis.7z). Once you do, copy and rename `app.asar` to `resources/app/game.asar` inside of the Grapefruit package.
+
+### 4. Create the version lock
+Create the file `game-version.lock` inside of `resources/app`. Put this text in it:
 ```
-You should see Grapefruit appear in your Activities!
-
-We are also working on a version of Grapefruit that can be installed via the [Snap Store](https://snapcraft.io/store).
-
-### Arch Linux
-First, you'll need 7-Zip and an AUR manager installed. You can install 7-Zip using this command:
-```bash
-sudo pacman -S 7zip
+1.5.7
 ```
 
-Using your AUR manager of choice, install the `electron11-bin`, `pepper-flash`, and `ajclassic-grapefruit` packages:
-```bash
-yay -S electron11-bin pepper-flash ajclassic-grapefruit
-```
-To start it, just run `aj-classic` in a terminal!
-
-The `ajclassic-grapefruit` library uses your system's copy of Electron/Pepper Flash, so if you don't have Electron 11 and Pepper Flash already installed, then it won't launch.
-
-In addition, you can download the PKGBUILD from the AUR and install it manually, either by using `makepkg` or by following all of the instructions inside of the PKGBUILD and placing all of the files by hand.
-
-You should see a desktop entry appear in your application launcher of choice.
-
-We are currently working on a more painful way to install Grapefruit on Arch, please stay tuned.
-
-### Fedora
-TBD
-
-### Gentoo
-Compile Electron v11.5.0. You can find the source code and ffmpeg binaries [here](https://github.com/electron/electron/releases/tag/v11.5.0). (You can also install it via `emerge`, if a package exists.) Then download Pepper Flash, the AJ Classic files, and the Grapefruit source. (You can look at the other install scripts to see where to find these.
-
-### Crostini (x64)
-The previous instructions (using the Ubuntu installer) would install Grapefruit and Pepper Flash but not the game files. We are working on a new version that actually supports chromeOS.
-
-### Raspbian (32-bit)
-TBD
-
-### Raspbian (64-bit)
-TBD
+### 5. Run the `AJ Classic` binary
+Grapefruit should launch instantly.
 
 ## Building from source
 To install the dependencies, run `npm install`. You can then use `make` to build versions for Linux or Windows. If you're on a Linux-based system, you can add `-tgz` to package a build in `.tar.gz` format. You can also use `npm test` to run Grapefruit. If you're on Arch Linux and have the `electron11-bin` package from the AUR and don't intend on building your own packages, you can run `electron11 . --no-sandbox` to run Grapefruit without needing to install its dependencies.
