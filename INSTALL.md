@@ -50,8 +50,17 @@ We currently need to collect a list of all the 32-bit dependencies that Electron
 ## Android
 TBD
 
+## Kindle Fire
+TBD
+
 ## iOS and iPadOS
 We do not have high hopes for this. At all.
 
 ## Tizen Linux (Samsung TV)
 We are currently experimenting with ways to port Grapefruit to Tizen-based Samsung smart TVs. Samsung smart TVs run Wayland and seem to support native Linux apps, so by bundling Electron and XWayland, it should be possible to download Pepper Flash and the games files. The only other issue is making sure this actually works, and then mapping the remote's input to Electron. We currently do not know if Electron's APIs will also forward input events to Pepper Flash.
+
+## webOS (LG TV)
+TBD
+
+## Fire TV
+TBD
