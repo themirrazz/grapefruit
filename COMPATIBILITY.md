@@ -18,6 +18,6 @@ m68k: No ❌<br/>
 SPARC: No ❌<br/>
 
 ## Display Compositors
-X11: Yes✅<br/>
-Wayland (XWayland): ✅<br/>
+X11: Yes ✅<br/>
+Wayland (XWayland): Yes ✅<br/>
 Wayland (Native): No ❌<br/>
