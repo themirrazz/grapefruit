@@ -47,11 +47,10 @@ We will have a script for 32-bit Raspbian by the end of February.
 ## Raspbian (64-bit)
 We currently need to collect a list of all the 32-bit dependencies that Electron requires. Currently, we haven't found an ARM64 copy of Pepper Flash, so as a result, Grapefruit does not have a native ARM64 build. Instead, the script will install the ARMv7l build, along with all the required 32-bit dependencies.
 
-## Android
-TBD
+## Android/Kindle Fire
+Google is killing the Android app ecosystem by requiring all developers - even outside of the Play Store - to submit a government-issued ID and use it to sign their apps. Until Google removes these invasive requirements, we will no longer be working on the development of Grapefruit for Android-based devices.
 
-## Kindle Fire
-TBD
+Learn more at [KeepAndroidOpen.org](https://keepandroidopen.org/)
 
 ## iOS and iPadOS
 We do not have high hopes for this. At all.
