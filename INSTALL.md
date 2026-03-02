@@ -42,7 +42,8 @@ Once everything's installed, just run `aj-classic` in your terminal and you're g
 Previously, we told users to just use the Ubuntu installer. For whatever reason, *this did not work.* Therefore, we're working on a new version of the installer, one that will hopefully actually install the game files as well as adding the "AJ Classic (Grapefruit)" entry to the chromeOS launcher.
 
 ## Raspbian (32-bit)
-We will have a script for 32-bit Raspbian by the end of February.
+~~We will have a script for 32-bit Raspbian by the end of February.~~
+well that obviously didnt happen
 
 ## Raspbian (64-bit)
 We currently need to collect a list of all the 32-bit dependencies that Electron requires. Currently, we haven't found an ARM64 copy of Pepper Flash, so as a result, Grapefruit does not have a native ARM64 build. Instead, the script will install the ARMv7l build, along with all the required 32-bit dependencies.
