@@ -1,10 +1,11 @@
 # Installing Grapefruit
 Grapefruit is available for many different platforms. Find your platform from the list, and follow the instructions. If your platform isn't listed, you can always [install Grapefruit manually](https://github.com/themirrazz/grapefruit#installing-grapefruit).
 
-## Windows or Mac
-Currently, Grapefruit isn't available for Windows or Mac. I didn't think it'd make sense because it's just an Electron-based wrapper around the official client. If you're on Windows or Mac, you can go to AJ Classic's [official website](https://classic.animaljam.com/?utm_source=grapefruit-gh) and download it that way.
+## Windows
+Coming next week!
 
-There are `.tar.gz` builds available for Windows 32-bit and 64-bit, but those only include the Grapefruit runtime itself, not the AJ Classic game files or Pepper Flash.
+## Mac
+TBD
 
 ## Ubuntu
 Open your terminal, and run the official install script:
