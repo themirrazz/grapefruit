@@ -2,7 +2,7 @@
 Grapefruit is available for many different platforms. Find your platform from the list, and follow the instructions. If your platform isn't listed, you can always [install Grapefruit manually](https://github.com/themirrazz/grapefruit#installing-grapefruit).
 
 ## Windows
-Coming next week!
+~~Coming next week!~~ Well that didn't happen on time. (SMH)
 
 ## Mac
 TBD
