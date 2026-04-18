@@ -1,17 +1,6 @@
 # Grapefruit
 Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic. It's super lightweight - in fact, all of the core logic is implemented in a single file, which is only ~~91~~ ~~89~~ 87 lines long (including blank lines and comments). Grapefruit was made with one goal in mind: Port AJ Classic to as many platforms as possible before they finish rewriting the entire thing in WebGL. 
 
-## Important notice for users of Android, Kindle, and other devices
-Google is closing down the Android platform. In September 2026, apps will no longer run on certified Android devices unless the developer has paid Google and uploaded their government ID. As of now, Grapefruit and Grapefruit Guava will NOT be released on any Android-based platform. To learn more, visit [KeepAndroidOpen.org](https://keepandroidopen.org/). The following devices will be affected:
-* Pixel, Samsung, and other Android phones or tablets
-* Waydroid or Android emulators (use the native builds instead)
-* The Kindle Fire series
-* The Fire TV, Fire TV Cube, or Fire TV Stick series
-* Any TV that is running Android TV Google TV
-* The NVIDIA Shield
-* Amazon Echo devices
-* Unfortunately, GrapheneOS
-
 ## Important notice for Windows and Mac users
 We've been aware that the Animal Jam: Play Wild app on the iOS app store has marked their app as using age assurance. While Grapefruit Guava was always going to have been available for Windows and Mac, we are now also releasing standard Grapefruit for said platforms as well. If age verification is ever added to AJ Classic, both Grapefruit and Grapefruit Guava will attempt to patch it out.
 
