@@ -2,9 +2,11 @@
 Grapefruit is a cross-platform launcher and runtime for Animal Jam Classic. It's super lightweight - in fact, all of the core logic is implemented in a single file, which is only ~~91~~ ~~89~~ 87 lines long (including blank lines and comments). Grapefruit was made with one goal in mind: Port AJ Classic to as many platforms as possible before they finish rewriting the entire thing in WebGL. 
 
 ## Important notice for Windows and Mac users
-We've been aware that the Animal Jam: Play Wild app on the iOS app store has marked their app as using age assurance. While Grapefruit Guava was always going to have been available for Windows and Mac, we are now also releasing standard Grapefruit for said platforms as well. If age verification is ever added to AJ Classic, both Grapefruit and Grapefruit Guava will attempt to patch it out.
+~~We've been aware that the Animal Jam: Play Wild app on the iOS app store has marked their app as using age assurance. While Grapefruit Guava was always going to have been available for Windows and Mac, we are now also releasing standard Grapefruit for said platforms as well. If age verification is ever added to AJ Classic, both Grapefruit and Grapefruit Guava will attempt to patch it out.~~
 
-If you're switching from the official AJ Classic client, you most likely won't need to sign in again. Grapefruit stores data in the same location that the official client does, so it should automatically be able to tell that you're logged in.
+~~If you're switching from the official AJ Classic client, you most likely won't need to sign in again. Grapefruit stores data in the same location that the official client does, so it should automatically be able to tell that you're logged in.~~
+
+**Unfortunately, I do not have a Windows or Mac computer readily available to test this on.** In addition, the Flash Player, which Grapefruit relies on, simply does not exist on Apple Silicon Macs. Because of these reasons, Grapefruit will NOT be available for Windows and Mac. However, Grapefruit Guava, a planned native-ish client, *will* be available for multiple platforms, including both Windows and Mac OS (including Apple Silicon).
 
 ## Installing Grapefruit
 You can find the installation instructions for all platforms in the [`INSTALL.md`](INSTALL.md) file. If Grapefruit isn't available from your platform, you can follow these instructions to manually install it (not officially supported).
