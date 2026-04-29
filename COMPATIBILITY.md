@@ -3,7 +3,7 @@ Compatibility table for the latest version of Grapefruit (v1.0.1)
 
 ## Operating Systems
 Windows: Yes ✅<br/>
-MacOS: Yes ✅<br/>
+MacOS: Only Intel (older) Macs ❌<br/>
 Linux: Yes ✅<br/>
 BSD: No ❌<br/>
 
@@ -19,5 +19,4 @@ SPARC: No ❌<br/>
 
 ## Display Compositors
 X11: Yes ✅<br/>
-Wayland (XWayland): Yes ✅<br/>
-Wayland (Native): No ❌<br/>
+Wayland: Only via XWayland ❌<br/>
